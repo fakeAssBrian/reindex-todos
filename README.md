@@ -67,9 +67,9 @@ Pages or any kind of hosting like that.
 
 ### Surge
 
-With Surge CLI you can deploy your app with just a few commands:
+With Netlify CLI you can deploy your app with just a few commands:
 
 ```sh
-npm install -g surge
-surge
+npm install -g netlify-cli
+netlify deploy
 ```
