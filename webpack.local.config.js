@@ -35,6 +35,9 @@ module.exports = {
       template: 'src/index.html',
       inject: 'body',
     }),
+    new webpack.DefinePlugin({
+      'process.env.REINDEX_URL': JSON.stringify(process.env.REINDEX_URL)
+    }),
   ],
 
   // Transform source code using Babel and React Hot Loader

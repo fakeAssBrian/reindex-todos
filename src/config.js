@@ -1,3 +1,3 @@
 export default {
-  REINDEX_URL: 'https://oxidized-cerium-209.myreindex.com',
+  REINDEX_URL: process.env.REINDEX_URL,
 };
