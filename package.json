@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.local.config.js",
-    "build": "webpack --progress --config webpack.production.config.js"
+    "build": "npm run reindex && webpack --progress --config webpack.production.config.js",
+    "reindex": "reindex login process.env.REINDEX_URL process.env.REINDEX_ID && reindex schema-fetch --force && reindex schema-relay ./data/schema.json"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "react": "^0.14.0-rc1",
     "react-dom": "^0.14.0-rc1",
     "react-relay": "^0.8.1",
+    "reindex-cli": "0.4.2",
     "reindex-js": "^0.3.1",
     "todomvc-app-css": "2.0.6"
   },
