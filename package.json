@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.local.config.js",
-    "build": "reindex login 'https://oxidized-cerium-209.myreindex.com' 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjp0cnVlLCJpYXQiOjE0NjI4Mjg0NDZ9.ESiqn5PlJNPagQFj4OxzMC7BV0iCOPqvir0anjUX8NY' && npm run reindex && webpack --progress --config webpack.production.config.js",
+    "build": "reindex login https://oxidized-cerium-209.myreindex.com 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjp0cnVlLCJpYXQiOjE0NjI4Mjg0NDZ9.ESiqn5PlJNPagQFj4OxzMC7BV0iCOPqvir0anjUX8NY' && npm run reindex && webpack --progress --config webpack.production.config.js",
     "schema:fetch": "reindex schema-fetch --force",
     "reindex": "npm run schema:fetch && reindex schema-relay ./data/schema.json"
   },
