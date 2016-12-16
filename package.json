@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.local.config.js",
-    "build": "reindex login https://oxidized-cerium-209.myreindex.com eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjp0cnVlLCJpYXQiOjE0NjI4Mjg0NDZ9.ESiqn5PlJNPagQFj4OxzMC7BV0iCOPqvir0anjUX8NY && npm run reindex && webpack --progress --config webpack.production.config.js",
-    "schema:fetch": "reindex schema-relay data/schema.json",
-    "reindex": "npm run schema:fetch && reindex schema-relay ./data/schema.json"
+    "build": "REINDEX_URL=https://oxidized-cerium-209.myreindex.com REINDEX_ID=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjp0cnVlLCJpYXQiOjE0NjI4Mjg0NDZ9.ESiqn5PlJNPagQFj4OxzMC7BV0iCOPqvir0anjUX8NY npm run reindex && npm run reindex && npm run webpack",
+    "webpack": "webpack --progress --config webpack.production.config.js",
+    "login": "reindex login process.env.REINDEX_URL process.env.REINDEX_ID",
+    "schema:fetch": "reindex schema-fetch --force",
+    "schema:push": "reindex schema-push",
+    "reindex": "reindex schema-relay ./data/schema.json",
+    "netlify": "npm run login && npm run schema:push && npm run reindex && npm run webpack"
   },
   "repository": {
     "type": "git",
